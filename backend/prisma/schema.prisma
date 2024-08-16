@@ -21,8 +21,10 @@ model Movie {
   id          Int      @id @default(autoincrement())
   title       String
   description String
+  image       String?  
   reviews     Review[]
 }
+
 
 model Review {
   id        Int      @id @default(autoincrement())
