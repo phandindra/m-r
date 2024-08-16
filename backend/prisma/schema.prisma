@@ -17,4 +17,18 @@ model User {
   id Int @id @default(autoincrement())
 }
 
+model Movie {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  reviews     Review[]
+}
+
+model Review {
+  id        Int      @id @default(autoincrement())
+  content   String
+  movie     Movie    @relation(fields: [movieId], references: [id])
+  movieId   Int
+  author    String
+}
 
